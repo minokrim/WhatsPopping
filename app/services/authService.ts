@@ -1,5 +1,5 @@
 import supabase from "../lib/dbConfig";
-import { userTypes } from "../../.next/dev/types/dbTypes";
+import { userTypes } from "../type/dbTypes";
 
 
 export const emailSignup = async (email: string, password: string) => {

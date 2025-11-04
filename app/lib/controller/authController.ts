@@ -1,6 +1,6 @@
 import { emailSignup,userSignup,emailSignin,resetPassword } from "@/app/services/authService";
 import { NextRequest,NextResponse } from "next/server";
-import { userTypes } from "@/.next/dev/types/dbTypes";
+import { userTypes } from "@/app/type/dbTypes";
 
 export const emailsignup = async (req: NextRequest) => {
   const { email, password } = await req.json();
