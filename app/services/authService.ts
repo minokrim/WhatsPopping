@@ -1,4 +1,4 @@
-import supabase from "../lib/dbConfig";
+import supabase from "../../lib/dbConfig";
 import { userTypes } from "../type/dbTypes";
 
 
