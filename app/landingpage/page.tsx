@@ -7,6 +7,7 @@ import Yellowsquare from '@/components/yellowSquare'
 import { PixelImage } from '@/components/ui/shadcn-io/pixel-image';
 import clsx from 'clsx';
 import Link from 'next/link';
+import CreatorSection from '@/components/creatorSection';
 
 export default function LandingPage(){  
     type EventItem = {
@@ -74,6 +75,10 @@ export default function LandingPage(){
                 <section className='bg-[#ffe33c] w-[30em] h-[20em]'></section>
                 <section className='bg-[#329a8b] w-[30em] h-[20em]'></section> */}
             </div>
+        </section>
+
+        <section>
+            <CreatorSection/>
         </section>
 
         <section className='p-15 flex flex-wrap gap-15'>
