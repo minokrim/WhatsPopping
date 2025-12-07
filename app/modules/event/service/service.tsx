@@ -16,9 +16,9 @@ export const createCreatorAccount=async(creator:eventCreator)=>{
 export const createStripeSession=async(email:string,id:number)=>{
     const verificationSession=await stripe.identity.verificationSessions.create({
     type:'document',
-    provided_details:{email:email},
-    metadata:{user_id:id}
+    // provided_details:{email:email},
+    metadata:{user_id:id,email:email}
 })
 
-return verificationSession.id;
+return verificationSession.client_secret;
 }

@@ -17,11 +17,11 @@ export const createcreatoraccount=async(req:NextRequest)=>{
 
 export const createstripesession=async(req:NextRequest)=>{
     const{email,userId}=await req.json();
-    if(!email||userId) return {message:"create account to begin id verification"};
+    if(!email||!userId) return {success:false, message:"create account to begin id verification"};
 
     try {
         const verification=await createStripeSession(email,userId);
-        return verification
+        return { success: true, data: verification }
     } catch (error) {
         return ("error creating verification session"+error);
     }

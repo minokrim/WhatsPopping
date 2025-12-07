@@ -1,0 +1,6 @@
+interface statCardProps{
+    statColor:string;
+    statTitle:string;
+    statValue:string;
+}
+export default statCardProps

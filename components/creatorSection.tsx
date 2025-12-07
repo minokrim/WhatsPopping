@@ -1,8 +1,28 @@
 import Image from "next/image"
 import StepsCard from "./stepsCard"
+import {loadStripe,Stripe} from '@stripe/stripe-js';
+import { useState } from "react";
+
 export default function CreatorSection(){
+    const [stripePromise,setStripePromise]=useState<Stripe|null>(null);
+    
     async function handleButtonClick(){
-        await fetch(http://localhost:3000/api/stripesession)
+        const promise = await loadStripe('pk_test_51SWgeMPIFtLxrWDr0UhJIXKItmZccWZCapyExR9aNxhpf7ulOMjYqA4HpxMuPdl1Bnxg6LqhWTL0bIm4qLTUtp5V00nL9iEf1N');
+        setStripePromise(promise);
+        console.log(stripePromise)
+        if(promise){
+            const response=await fetch("/api/stripesession",{method:"POST",headers: { "Content-Type": "application/json" },body: JSON.stringify({ email:"ayomidekareem563@gmail.com", userId:1 })});
+            const session = await response.json();
+            console.log()
+
+            const { error } = await promise.verifyIdentity(session.clientSecret.data);
+                if (error) {
+                    console.log('[error]', error);
+                } else {
+                    console.log('Verification submitted!');
+                }
+        }
+        
     }
     return <div className="bg-[#329a8b]" style={{backgroundImage:"url('./bgConfetti.png')",backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
         <section className="flex w-full justify-around p-5 items-center">
