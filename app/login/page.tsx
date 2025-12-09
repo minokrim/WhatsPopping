@@ -4,7 +4,6 @@ import {Card,CardAction,CardContent,CardDescription,CardFooter,CardHeader,CardTi
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
-import { AuroraBackground } from "@/components/ui/shadcn-io/aurora-background";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Nav from "@/components/nav";

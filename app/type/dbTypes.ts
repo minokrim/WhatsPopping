@@ -11,3 +11,8 @@ export interface userTypes{
     email:string,
     phoneNumber:string,
 }
+
+export interface signupReturn{
+    data?:any;
+    error?:string;
+}
